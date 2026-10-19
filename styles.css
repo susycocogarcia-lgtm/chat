@@ -7,3 +7,23 @@
     height:20px;
     font-family:monospace;
 }
+.send{
+    width:30vh;
+    height:20%;
+}
+.msg-text{
+    font-family:'Courier New', Courier, monospace;
+}
+body{
+    display:flex;
+    flex-direction: row;
+    background-color: lightslategray;
+}
+.menu{
+    width:25%;
+    height:100%;
+}
+.message{
+    width:70%;
+    height:100%;
+}
