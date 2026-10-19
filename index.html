@@ -8,6 +8,18 @@
 </head>
 <body>
     <div class="menu">
+        <details class="settings">
+            <summary class="settings-toggle">
+                <span class="settings-icon" aria-hidden="true">&#9881;</span>
+                <span>Settings</span>
+            </summary>
+            <fieldset class="theme-options">
+                <legend>Theme</legend>
+                <label class="theme-choice"><input type="radio" name="theme" value="light" checked> Light</label>
+                <label class="theme-choice"><input type="radio" name="theme" value="dusk"> Dusk</label>
+                <label class="theme-choice"><input type="radio" name="theme" value="forest"> Forest</label>
+            </fieldset>
+        </details>
         <button class="button2">new chat</button>
         <button class="button2">account</button>
         <button class="button2">logout</button>
@@ -16,7 +28,8 @@
     </div>
     <div class="message">
         <div class="messages">
-            <div class="text-msg">
+            <div class="text-msg user-message">
+                <span class="msg-sender">You</span>
                 <p class="msg-text" id="text">hello</p>
             </div>
         </div>
@@ -25,5 +38,22 @@
             <button class="button1">send</button>
         </div>
     </div>
+    <script>
+        const themeOptions = document.querySelectorAll('input[name="theme"]');
+        const savedTheme = localStorage.getItem('chat-theme');
+        const savedOption = Array.from(themeOptions).find(option => option.value === savedTheme);
+
+        if (savedOption) {
+            savedOption.checked = true;
+            document.body.dataset.theme = savedTheme;
+        }
+
+        themeOptions.forEach(option => {
+            option.addEventListener('change', () => {
+                document.body.dataset.theme = option.value;
+                localStorage.setItem('chat-theme', option.value);
+            });
+        });
+    </script>
 </body>
 </html>
