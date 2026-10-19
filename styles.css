@@ -2,14 +2,24 @@
     cursor:pointer;
     background-color:cornflowerblue;
     color:white;
-    border-radius:25px;
-    width:45px;
-    height:20px;
+    border:0;
+    border-radius:6px;
+    min-width:56px;
+    height:38px;
     font-family:monospace;
 }
 .send{
-    width:30vh;
-    height:20%;
+    display:flex;
+    gap:8px;
+    padding:12px;
+    border-top:1px solid #87939f;
+}
+.input-box{
+    flex:1;
+    min-width:0;
+    height:36px;
+    box-sizing:border-box;
+    padding:0 12px;
 }
 .msg-text{
     font-family:'Courier New', Courier, monospace;
@@ -18,23 +28,48 @@ body{
     display:flex;
     flex-direction: row;
     background-color: lightslategray;
+    margin:0;
+    min-height:100vh;
+    font-family:monospace;
 }
 .menu{
-    width:25%;
-    height:100%;
+    box-sizing:border-box;
+    width:240px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding:16px;
+    background-color:#34414d;
+}
+.message{
+    flex:1;
+    min-width:0;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
 }
-.message{
-    width:70%;
-    height:100%;
+.messages{
+    flex:1;
+    padding:16px;
 }
 .button2{
     cursor:pointer;
     background-color:grey;
     color:white;
-    border-radius:25px;
-    width:45px;
-    height:20px;
+    border:0;
+    border-radius:6px;
+    min-height:36px;
+    padding:0 12px;
+    text-align:left;
     font-family:monospace;
+}
+@media (max-width:600px){
+    .menu{
+        width:150px;
+        padding:12px 8px;
+    }
+    .send{
+        padding:8px;
+    }
 }
